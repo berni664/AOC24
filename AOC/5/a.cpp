@@ -49,7 +49,7 @@ std::vector<int> parse_string_to_vector(const std::string& csv) {
    std::vector<int> values;
    size_t start = 0;
    size_t end = csv.find(",");
-
+   
    while (end != std::string::npos) {
       values.push_back(std::stoi(csv.substr(start, end - start)));
       start = end + 1;
