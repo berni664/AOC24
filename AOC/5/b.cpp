@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <unordered_map>
+#include <string>
 
 std::vector<int> parse_string_to_vector(const std::string& input_string);
 std::unordered_map<int, std::vector<int>> get_input_order(const std::string& filename);
