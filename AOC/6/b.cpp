@@ -16,7 +16,7 @@ bool is_loop(const std::vector<std::string>& mace);
 
 int main(){
    std::vector<std::string> mace = get_input("input");
-   int counter{0};
+   int counter{0}, progress{0};
    std::vector<std::tuple<int,int>> path = get_path(mace), path_unique;
    
    for(size_t i{0}; i < path.size(); ++i){
@@ -31,14 +31,16 @@ int main(){
    }
 
    for(auto& line: path_unique){
+      std::cout << "Progress: " << progress << "/" << path_unique.size() << std::endl;
       std::vector<std::string> mace_copy{mace};
          mace_copy[std::get<1>(line)][std::get<0>(line)] = '#';
          if(is_loop(mace_copy)){
            counter++;
-         }  
+         }
+      progress++;
    }
 
-   std::cout << counter << std::endl;
+   std::cout << "You could place obstacles in " << counter << " different ways to create a loop!" <<std::endl;
    return 0;
 }
 
