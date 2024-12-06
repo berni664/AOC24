@@ -8,6 +8,7 @@
 #include <set>
 #include <unordered_map>
 #include <tuple>
+#include <chrono> 
 
 std::vector<std::string> get_input(const std::string& filename);
 std::pair<int,int> get_starting_position(const std::vector<std::string>& mace);
@@ -15,6 +16,8 @@ std::vector<std::tuple<int,int>> get_path(const std::vector<std::string>& mace);
 bool is_loop(const std::vector<std::string>& mace);
 
 int main(){
+   auto start = std::chrono::high_resolution_clock::now();
+
    std::vector<std::string> mace = get_input("input");
    int counter{0}, progress{0};
    std::vector<std::tuple<int,int>> path = get_path(mace), path_unique;
@@ -41,6 +44,10 @@ int main(){
    }
 
    std::cout << "You could place obstacles in " << counter << " different ways to create a loop!" <<std::endl;
+   auto end = std::chrono::high_resolution_clock::now();
+   std::chrono::duration<double> elapsed_seconds = end - start;
+   std::cout << "This took: " << elapsed_seconds.count() << " seconds\n";
+
    return 0;
 }
 
