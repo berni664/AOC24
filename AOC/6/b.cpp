@@ -31,7 +31,7 @@ int main(){
    }
 
    for(auto& line: path_unique){
-      std::cout << "Progress: " << progress << "/" << path_unique.size() << std::endl;
+      std::cout << "Progress: " << progress << "/" << path_unique.size()-1 << std::endl;
       std::vector<std::string> mace_copy{mace};
          mace_copy[std::get<1>(line)][std::get<0>(line)] = '#';
          if(is_loop(mace_copy)){
