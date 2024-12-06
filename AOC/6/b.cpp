@@ -1,3 +1,5 @@
+//schlecht Lösung
+
 #include <fstream>
 #include <vector>
 #include <algorithm>
