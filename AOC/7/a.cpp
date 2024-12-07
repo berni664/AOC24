@@ -78,19 +78,17 @@ std::vector<std::vector<mpz_class>> get_input(const std::string& filename){
    return result;
 }
 
-void generatePermutations(std::vector<std::string>& results, std::string current, int n) {
+void generatePermutations(std::vector<std::string>& results, std::string current, int n){
     if (current.length() == n) {
         results.push_back(current);
         return;
     }
-
     generatePermutations(results, current + "+", n);
-   
     generatePermutations(results, current + "*", n);
 }
 
 
-std::vector<std::string> getAllPermutations(int n) {
+std::vector<std::string> getAllPermutations(int n){
     std::vector<std::string> results;
     generatePermutations(results, "", n);
     return results;
