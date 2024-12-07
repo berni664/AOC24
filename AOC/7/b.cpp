@@ -1,4 +1,4 @@
-//g++ a.cpp -lgmp -lgmpxx
+//g++ b.cpp -lgmp -lgmpxx
 
 #include <fstream>
 #include <vector>
