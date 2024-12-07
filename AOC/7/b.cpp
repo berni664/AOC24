@@ -20,10 +20,6 @@ mpz_class concatenate(const mpz_class& a, const mpz_class& b);
 int main(){
    auto start = std::chrono::high_resolution_clock::now();
    std::vector<std::vector<mpz_class>> equations = get_input("input");
-   std::vector<std::string> perms = getAllPermutations(2);
-   for(auto& line : perms){
-      std::cout << line << std::endl;
-   }
    mpz_class counter {0};
    int progress{1};
    for(auto& line : equations){
