@@ -53,7 +53,6 @@ std::vector<Node> defragment(std::vector<std::vector<Node>>& input){
          }
       }
    }
-   print(input);
    std::vector<Node> result;
    for(const auto& vec : input){
       for(const auto& val : vec){
@@ -82,8 +81,7 @@ std::vector<std::vector<Node>> get_input(const std::string& filename){
          help.is_empty = (j%2 != 0);
          piece.push_back(help);
       }
-      if(!piece.empty())
-         result.push_back(piece);
+      result.push_back(piece);
       if(j%2 == 0)
          tracker++;
    }
