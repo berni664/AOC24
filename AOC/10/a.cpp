@@ -84,8 +84,8 @@ bool dfs(const std::vector<std::vector<int>>& adj_list, int current, int target,
 }
 
 bool are_nodes_connected(const std::vector<std::vector<int>>& adj_list, int start, int target){
-    std::unordered_set<int> visited;
-    return dfs(adj_list, start, target, visited);
+   std::unordered_set<int> visited;
+   return dfs(adj_list, start, target, visited);
 }
 
 std::vector<int> get_starting_pos(const std::vector<std::vector<int>>& mace){
