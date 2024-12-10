@@ -91,7 +91,7 @@ bool are_nodes_connected(const std::vector<std::vector<int>>& adj_list, int star
 std::vector<int> get_starting_pos(const std::vector<std::vector<int>>& mace){
    std::vector<int> result;
    for(size_t i{0}; i < mace.size(); ++i){
-      for(size_t j{}; j < mace.at(i).size(); ++j){
+      for(size_t j{0}; j < mace.at(i).size(); ++j){
          if(mace.at(i).at(j) == 0)
             result.push_back(i*mace.at(i).size()+j);
       }
@@ -102,7 +102,7 @@ std::vector<int> get_starting_pos(const std::vector<std::vector<int>>& mace){
 std::vector<int> get_end_pos(const std::vector<std::vector<int>>& mace){
    std::vector<int> result;
    for(size_t i{0}; i < mace.size(); ++i){
-      for(size_t j{}; j < mace.at(i).size(); ++j){
+      for(size_t j{0}; j < mace.at(i).size(); ++j){
          if(mace.at(i).at(j) == 9)
             result.push_back(i*mace.at(i).size()+j);
       }
